@@ -8,7 +8,9 @@ import {
   Settings,
   User,
   Brain,
-  Zap
+  Zap,
+  FileText,
+  GitBranch
 } from "lucide-react";
 
 import {
@@ -41,7 +43,7 @@ const navigationItems = [
   {
     title: "Branches",
     url: "/analytics",
-    icon: BarChart3
+    icon: GitBranch
   },
   {
     title: "AI Assistant",
@@ -50,12 +52,12 @@ const navigationItems = [
   },
   {
     title: "Base de Conhecimento",
-    url: "/settings",
-    icon: Settings
+    url: "/knowledge",
+    icon: FileText
   },
   {
     title: "Bots Config",
-    url: "/settings",
+    url: "/bots",
     icon: Settings
   },
   {
@@ -72,26 +74,22 @@ export function AppSidebar() {
   const collapsed = state === "collapsed";
 
   const isActive = (path: string) => currentPath === path;
-  const getNavCls = ({ isActive }: { isActive: boolean }) =>
-    isActive 
-      ? "bg-primary text-primary-foreground font-medium" 
-      : "hover:bg-muted/50 text-muted-foreground hover:text-foreground";
 
   return (
-    <Sidebar className={`${collapsed ? "w-16" : "w-64"} bg-card border-r`} collapsible="icon">
-      <SidebarContent>
+    <Sidebar className={`${collapsed ? "w-16" : "w-64"} bg-sidebar border-r border-sidebar-border`} collapsible="icon">
+      <SidebarContent className="bg-sidebar text-sidebar-foreground">
         {/* Logo GitHub Muse */}
-        <div className="p-6 border-b">
+        <div className="p-6 border-b border-sidebar-border bg-sidebar">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Brain className="h-4 w-4 text-primary-foreground" />
             </div>
             {!collapsed && (
               <div>
-                <h1 className="font-bold text-lg text-foreground">
+                <h1 className="font-bold text-lg text-sidebar-foreground">
                   GitHub Muse
                 </h1>
-                <p className="text-xs text-muted-foreground">AI-Powered Development</p>
+                <p className="text-xs text-sidebar-foreground/60">AI-Powered Development</p>
               </div>
             )}
           </div>
@@ -106,7 +104,13 @@ export function AppSidebar() {
                     <NavLink 
                       to={item.url} 
                       end 
-                      className={getNavCls}
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors w-full ${
+                          isActive 
+                            ? "bg-sidebar-primary text-sidebar-primary-foreground font-medium" 
+                            : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                        }`
+                      }
                     >
                       <item.icon className="h-4 w-4" />
                       {!collapsed && (
@@ -131,15 +135,15 @@ export function AppSidebar() {
         </div>
 
         {/* User Profile */}
-        <div className="mt-auto p-4 border-t">
+        <div className="mt-auto p-4 border-t border-sidebar-border bg-sidebar">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-success rounded-full flex items-center justify-center">
               <span className="text-xs font-bold text-success-foreground">U</span>
             </div>
             {!collapsed && (
               <div>
-                <p className="text-sm font-medium text-foreground">Usuário GitHub</p>
-                <p className="text-xs text-muted-foreground">Conectado</p>
+                <p className="text-sm font-medium text-sidebar-foreground">Usuário GitHub</p>
+                <p className="text-xs text-sidebar-foreground/60">Conectado</p>
               </div>
             )}
           </div>

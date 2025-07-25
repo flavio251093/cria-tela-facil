@@ -9,6 +9,7 @@ import Models from './pages/Models.tsx'
 import Assistant from './pages/Assistant.tsx'
 import Analytics from './pages/Analytics.tsx'
 import Settings from './pages/Settings.tsx'
+import { Toaster } from './components/ui/toaster'
 import './App.css'
 
 function AppContent() {
@@ -44,6 +45,7 @@ function App() {
     <AuthProvider>
       <Router>
         <AppContent />
+        <Toaster />
       </Router>
     </AuthProvider>
   )

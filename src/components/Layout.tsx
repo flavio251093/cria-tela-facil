@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-background">
+      <div className="min-h-screen flex w-full bg-background text-foreground dark">
         <AppSidebar />
         
         <div className="flex-1 flex flex-col">
