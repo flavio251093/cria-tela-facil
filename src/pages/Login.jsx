@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../hooks/useAuth'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -24,6 +24,7 @@ const Login = () => {
         setError(error.message)
       }
     } catch (err) {
+      console.error('Login error:', err)
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)
@@ -40,6 +41,7 @@ const Login = () => {
         setError(error.message)
       }
     } catch (err) {
+      console.error('GitHub login error:', err)
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)
