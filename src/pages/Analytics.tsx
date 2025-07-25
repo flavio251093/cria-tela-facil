@@ -9,28 +9,28 @@ const Analytics = () => {
       title: "Requisições Totais",
       value: "24,586",
       change: "+12.5%",
-      changeType: "positive" as const,
+      variant: "primary" as const,
       icon: Activity
     },
     {
       title: "Custo Total",
       value: "R$ 1,247.50",
       change: "+8.2%",
-      changeType: "positive" as const,
+      variant: "warning" as const,
       icon: DollarSign
     },
     {
       title: "Eficiência IA",
       value: "94.2%",
       change: "+2.1%",
-      changeType: "positive" as const,
+      variant: "success" as const,
       icon: TrendingUp
     },
     {
       title: "Modelos Ativos",
       value: "12",
       change: "+3",
-      changeType: "positive" as const,
+      variant: "default" as const,
       icon: BarChart3
     }
   ];
@@ -54,7 +54,7 @@ const Analytics = () => {
             title={stat.title}
             value={stat.value}
             change={stat.change}
-            changeType={stat.changeType}
+            variant={stat.variant}
             icon={stat.icon}
           />
         ))}
