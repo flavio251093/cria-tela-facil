@@ -82,28 +82,28 @@ const Models = () => {
       value: models.length,
       change: "+1 este mês",
       icon: Bot,
-      variant: "primary"
+      variant: "primary" as const
     },
     {
       title: "Modelos Ativos",
       value: models.filter(m => m.status === 'active').length,
       change: "100% funcionais",
       icon: CheckCircle,
-      variant: "success"
+      variant: "success" as const
     },
     {
       title: "Requests este mês",
       value: models.reduce((sum, m) => sum + m.requests, 0),
       change: "+23%",
       icon: Activity,
-      variant: "info"
+      variant: "default" as const
     },
     {
       title: "Custo Total",
       value: `$${models.reduce((sum, m) => sum + m.cost, 0).toFixed(2)}`,
       change: "+8.5%",
       icon: DollarSign,
-      variant: "warning"
+      variant: "warning" as const
     }
   ];
 

@@ -1,11 +1,13 @@
 import { Octokit } from '@octokit/rest'
 
 class GitHubService {
+  private octokit: Octokit | null
+
   constructor() {
     this.octokit = null
   }
 
-  initialize(token) {
+  initialize(token: string) {
     this.octokit = new Octokit({
       auth: token,
     })
@@ -26,7 +28,7 @@ class GitHubService {
     }
   }
 
-  async createIssue(owner, repo, title, body) {
+  async createIssue(owner: string, repo: string, title: string, body: string) {
     if (!this.octokit) throw new Error('GitHub not initialized')
     
     try {
@@ -43,7 +45,7 @@ class GitHubService {
     }
   }
 
-  async getIssues(owner, repo) {
+  async getIssues(owner: string, repo: string) {
     if (!this.octokit) throw new Error('GitHub not initialized')
     
     try {
@@ -60,7 +62,7 @@ class GitHubService {
     }
   }
 
-  async updateIssue(owner, repo, issueNumber, updates) {
+  async updateIssue(owner: string, repo: string, issueNumber: number, updates: any) {
     if (!this.octokit) throw new Error('GitHub not initialized')
     
     try {

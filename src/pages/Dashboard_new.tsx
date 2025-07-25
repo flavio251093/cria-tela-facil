@@ -82,22 +82,22 @@ const Dashboard = () => {
     {
       title: "Novo Modelo",
       icon: Plus,
-      variant: "success"
+      variant: "success" as const
     },
     {
       title: "Consultar AI",
       icon: Bot,
-      variant: "primary"
+      variant: "primary" as const
     },
     {
       title: "Sync Repos",
       icon: RefreshCw,
-      variant: "info"
+      variant: "info" as const
     },
     {
       title: "Analytics",
       icon: BarChart3,
-      variant: "success"
+      variant: "success" as const
     }
   ];
 

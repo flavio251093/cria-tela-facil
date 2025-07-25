@@ -295,7 +295,7 @@ const Models = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Descrição</label>
                 <textarea
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  rows="3"
+                  rows={3}
                   value={newModel.description}
                   onChange={(e) => setNewModel({...newModel, description: e.target.value})}
                   placeholder="Descreva as capacidades do modelo..."

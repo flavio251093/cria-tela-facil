@@ -22,28 +22,28 @@ const Dashboard = () => {
       value: 12,
       change: "+2 este mês",
       icon: FolderGit2,
-      variant: "default"
+      variant: "default" as const
     },
     {
       title: "Issues Abertas", 
       value: 24,
       change: "-3 esta semana",
       icon: Bug,
-      variant: "default"
+      variant: "warning" as const
     },
     {
       title: "AI Queries",
       value: 156,
       change: "+45 hoje", 
       icon: Bot,
-      variant: "primary"
+      variant: "primary" as const
     },
     {
       title: "Branches Ativas",
       value: 8,
       change: "Estável",
       icon: GitBranch,
-      variant: "default"
+      variant: "success" as const
     }
   ];
 
@@ -52,21 +52,21 @@ const Dashboard = () => {
       title: "Bug: Login não funciona em mobile",
       description: "web-app • há 2 horas",
       time: "há 2 horas",
-      status: "open",
+      status: "open" as const,
       icon: Bug
     },
     {
       title: "AI gerou documentação para API",
       description: "backend-api • há 4 horas",
       time: "há 4 horas",
-      status: "completed",
+      status: "completed" as const,
       icon: FileText
     },
     {
       title: "Feature: Implementar dark mode",
       description: "web-app • há 6 horas",
       time: "há 6 horas",
-      status: "in-progress",
+      status: "in-progress" as const,
       icon: GitBranch
     }
   ];
@@ -75,22 +75,22 @@ const Dashboard = () => {
     {
       title: "Nova Issue",
       icon: Plus,
-      variant: "success"
+      variant: "success" as const
     },
     {
       title: "Consultar AI",
       icon: Bot,
-      variant: "primary"
+      variant: "primary" as const
     },
     {
       title: "Sync Repos",
       icon: RefreshCw,
-      variant: "info"
+      variant: "info" as const
     },
     {
       title: "Analytics",
       icon: BarChart3,
-      variant: "success"
+      variant: "success" as const
     }
   ];
 
