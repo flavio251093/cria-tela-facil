@@ -32,7 +32,7 @@ export function QuickAction({
   return (
     <Button
       onClick={onClick}
-      className={`h-20 w-full flex-col gap-2 border border-border rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in ${getVariantStyles()}`}
+      className={`h-20 w-full flex-col gap-2 border rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 animate-scale-in ${getVariantStyles()}`}
       variant="outline"
     >
       <Icon className="h-5 w-5" />

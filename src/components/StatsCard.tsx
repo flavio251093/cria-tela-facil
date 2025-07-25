@@ -26,7 +26,7 @@ export function StatsCard({
       case "warning":
         return "border-warning/20 bg-gradient-to-br from-warning/5 to-warning/10";
       default:
-        return "border-border";
+        return "";
     }
   };
 

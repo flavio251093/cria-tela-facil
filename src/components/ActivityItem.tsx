@@ -43,7 +43,7 @@ export function ActivityItem({
   };
 
   return (
-    <div className="bg-card border border-border rounded-lg p-4 hover:bg-muted/20 transition-colors animate-fade-in">
+    <div className="bg-card border rounded-lg p-4 hover:bg-muted/20 transition-colors animate-fade-in">
       <div className="flex items-start gap-4">
         <div className="p-2 rounded-md bg-muted/50">
           <Icon className="h-4 w-4 text-muted-foreground" />
