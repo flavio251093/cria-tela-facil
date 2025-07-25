@@ -6,8 +6,8 @@ import Layout from './components/Layout.tsx'
 import Login from './pages/Login.tsx'
 import Dashboard from './pages/Dashboard.tsx'
 import Models from './pages/Models.tsx'
-import GitHub from './pages/GitHub.tsx'
-import Issues from './pages/Issues.tsx'
+import Assistant from './pages/Assistant.tsx'
+import Analytics from './pages/Analytics.tsx'
 import Settings from './pages/Settings.tsx'
 import './App.css'
 
@@ -31,8 +31,8 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/models" element={<Models />} />
-        <Route path="/github" element={<GitHub />} />
-        <Route path="/issues" element={<Issues />} />
+        <Route path="/assistant" element={<Assistant />} />
+        <Route path="/analytics" element={<Analytics />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </Layout>

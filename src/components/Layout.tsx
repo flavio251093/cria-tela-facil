@@ -8,13 +8,13 @@ const Layout = ({ children }) => {
   const getPageTitle = () => {
     switch (location.pathname) {
       case "/models":
-        return "AI Models";
-      case "/github":
-        return "GitHub";
-      case "/issues":
-        return "Issues";
+        return "Modelos de IA";
+      case "/assistant":
+        return "Assistente IA";
+      case "/analytics":
+        return "Análises";
       case "/settings":
-        return "Settings";
+        return "Configurações";
       default:
         return "Dashboard";
     }

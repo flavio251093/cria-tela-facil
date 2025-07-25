@@ -1,7 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { supabase } from '../services/supabase'
 
-export const AuthContext = createContext({})
+interface AuthContextType {
+  user: any | null
+  loading: boolean
+  signIn: (email: string, password: string) => Promise<any>
+  signUp: (email: string, password: string) => Promise<any>
+  signOut: () => Promise<any>
+  signInWithGitHub: () => Promise<any>
+}
+
+export const AuthContext = createContext<AuthContextType>({} as AuthContextType)
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
