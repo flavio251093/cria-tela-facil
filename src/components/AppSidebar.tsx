@@ -26,32 +26,42 @@ const navigationItems = [
   {
     title: "Dashboard",
     url: "/",
-    icon: Home,
-    description: "Visão geral do sistema"
+    icon: Home
   },
   {
-    title: "Modelos de IA",
+    title: "Repositórios",
     url: "/models",
-    icon: Cpu,
-    description: "Gerenciar modelos de IA"
+    icon: Cpu
   },
   {
-    title: "Assistente IA",
+    title: "Issues",
     url: "/assistant",
-    icon: MessageSquare,
-    description: "Chat com assistente IA"
+    icon: MessageSquare
   },
   {
-    title: "Análises",
+    title: "Branches",
     url: "/analytics",
-    icon: BarChart3,
-    description: "Relatórios e métricas"
+    icon: BarChart3
+  },
+  {
+    title: "AI Assistant",
+    url: "/settings",
+    icon: Brain
+  },
+  {
+    title: "Base de Conhecimento",
+    url: "/settings",
+    icon: Settings
+  },
+  {
+    title: "Bots Config",
+    url: "/settings",
+    icon: Settings
   },
   {
     title: "Configurações",
     url: "/settings",
-    icon: Settings,
-    description: "Configurações do sistema"
+    icon: Settings
   },
 ];
 
@@ -64,47 +74,43 @@ export function AppSidebar() {
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-primary text-primary-foreground font-medium shadow-lg transition-all duration-200 animate-glow" 
-      : "hover:bg-sidebar-accent/50 transition-all duration-200 hover:scale-105";
+      ? "bg-primary text-primary-foreground font-medium" 
+      : "hover:bg-muted/50 text-muted-foreground hover:text-foreground";
 
   return (
-    <Sidebar className={`${collapsed ? "w-14" : "w-60"} glass-card border-r-0`} collapsible="icon">
+    <Sidebar className={`${collapsed ? "w-16" : "w-64"} bg-card border-r`} collapsible="icon">
       <SidebarContent>
-        {/* Logo IA.LUA */}
-        <div className="p-4 border-b border-sidebar-border">
+        {/* Logo GitHub Muse */}
+        <div className="p-6 border-b">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center animate-pulse-border">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Brain className="h-4 w-4 text-primary-foreground" />
             </div>
             {!collapsed && (
               <div>
-                <h1 className="font-bold text-lg bg-gradient-primary bg-clip-text text-transparent">
-                  IA.LUA
+                <h1 className="font-bold text-lg text-foreground">
+                  GitHub Muse
                 </h1>
-                <p className="text-xs text-sidebar-foreground/60">Sistema de Gerenciamento de IA</p>
+                <p className="text-xs text-muted-foreground">AI-Powered Development</p>
               </div>
             )}
           </div>
         </div>
 
-        <SidebarGroup>
+        <SidebarGroup className="px-3 py-2">
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="space-y-1">
               {navigationItems.map((item, index) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton asChild className="w-full">
                     <NavLink 
                       to={item.url} 
                       end 
                       className={getNavCls}
-                      style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <item.icon className="h-4 w-4" />
                       {!collapsed && (
-                        <div className="flex flex-col">
-                          <span className="text-sm font-medium">{item.title}</span>
-                          <span className="text-xs opacity-70">{item.description}</span>
-                        </div>
+                        <span className="text-sm font-medium">{item.title}</span>
                       )}
                     </NavLink>
                   </SidebarMenuButton>
@@ -125,15 +131,15 @@ export function AppSidebar() {
         </div>
 
         {/* User Profile */}
-        <div className="mt-auto p-4 border-t border-sidebar-border">
+        <div className="mt-auto p-4 border-t">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center hover-glow">
-              <User className="h-4 w-4 text-primary-foreground" />
+            <div className="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+              <span className="text-xs font-bold text-success-foreground">U</span>
             </div>
             {!collapsed && (
               <div>
-                <p className="text-sm font-medium text-sidebar-foreground">Usuário IA.LUA</p>
-                <p className="text-xs text-sidebar-foreground/60">Sistema Ativo</p>
+                <p className="text-sm font-medium text-foreground">Usuário GitHub</p>
+                <p className="text-xs text-muted-foreground">Conectado</p>
               </div>
             )}
           </div>

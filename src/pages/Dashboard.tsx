@@ -95,18 +95,8 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-          <p className="text-muted-foreground">Visão geral dos seus projetos e atividades</p>
-        </div>
-        <Button className="bg-gradient-primary hover:opacity-90 text-primary-foreground">
-          <Bot className="h-4 w-4 mr-2" />
-          Ask AI
-        </Button>
-      </div>
+    <div className="space-y-6">
+      {/* Stats Grid */}
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
